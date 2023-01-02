@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import time
 
-st.image("ohio_logo.svg")
+st.image("ohio_logo_small.svg", width=350)
 
 
 tab1, tab2, tab3 = st.tabs(["Power", "Sliders", "Owl"])
@@ -44,4 +44,4 @@ with tab2:
 
 with tab3:
     st.header("An owl")
-    st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
+    st.image("https://static.streamlit.io/examples/owl.jpg", width=290)
