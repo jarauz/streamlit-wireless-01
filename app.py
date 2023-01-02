@@ -2,11 +2,12 @@ import streamlit as st
 import numpy as np
 import time
 
-st.image("ohio_logo_small.svg", width=310)
+st.image("ohio_logo_small.svg", width=200)
 # SVG needed to be optimized svg from Inkscape save as to work
+st.caption("McClure School of Emerging Communicaton Technologies")
 
 
-tab1, tab2, tab3 = st.tabs(["Power", "Sliders", "Owl"])
+tab1, tab2, tab3 = st.tabs(["Power", "Free space", "Owl"])
 
 with tab1:
     col1, col2 = st.columns(2)
