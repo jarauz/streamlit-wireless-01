@@ -34,15 +34,8 @@ with tab1:
     
 
 with tab2:
-    values1 = st.slider(
-     'Select a range of values',
-     0.0, 100.0, (25.0, 75.0), key='values1')
-    st.write('Values:', values1)
-  
-    values2 = st.slider(
-     'Select a range of values',
-     0.0, 100.0, (25.0, 75.0), key='values2')
-    st.write('Values:', values2)
+        n1 = st.number_input('Input power in [mW]', key='n1')
+        n2 = st.number_input('Input power in [dBm]', key='n2')
 
 with tab3:
     st.header("An owl")
