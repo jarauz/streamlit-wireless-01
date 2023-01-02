@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import time
 
-# st.image("http://www.its.ohio.edu/greenroof/ohio_logo.svg", width=50)
+st.image("ohio_logo.svg")
 
 
 tab1, tab2, tab3 = st.tabs(["Power", "Sliders", "Owl"])
