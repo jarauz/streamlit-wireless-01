@@ -2,26 +2,34 @@ import streamlit as st
 import numpy as np
 import time
 
+# st.image("http://www.its.ohio.edu/greenroof/ohio_logo.svg", width=50)
 
 
-
-tab1, tab2, tab3 = st.tabs(["Input Fields", "Sliders", "Owl"])
+tab1, tab2, tab3 = st.tabs(["Power", "Sliders", "Owl"])
 
 with tab1:
     col1, col2 = st.columns(2)
 
     with col1:
-        n1 = st.number_input('Insert a number', key='n1')
-        st.write('The first number is ', n1)
+        st.subheader('mW to dBm')
+        n1 = st.number_input('Input power in [mW]', key='n1')
+        st.write('Power in [mW] = ', n1)
         # keys have to be different, but not necessarily match the
         # name of the returned variable e.g. n1 and n1
-
+        pdBm = 10*np.log10(n1)
+        output = "{:.4f}".format(pdBm)
+        st.write('Power in [dBm] is = ', output, 'dBm')
+        st.latex(r'''P_{dBm}=10 \times log_{10} \left( \frac{P_{mW}}{1mW}\right )''')
 
     with col2:
-        n2 = st.number_input('Insert a number', key='n2')
-        st.write('The second number is ', n2)
-      
-    st.write('The sum of the two numbers is: ', n1 + n2)
+        st.subheader('dBm to mW')
+        n2 = st.number_input('Input power in [dBm]', key='n2')
+        st.write('Power in [dBm] = ', n2)
+        pmW = np.power(10,n2/10)
+        output = "{:.4f}".format(pmW)
+        st.write('Power in [mW] is = ', output, 'mW')
+        st.latex(r'''P_{mW}=10^{\left( \frac{P_{dBm}}{10} \right )}''')      
+    
 
 with tab2:
     values1 = st.slider(
