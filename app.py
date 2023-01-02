@@ -2,7 +2,8 @@ import streamlit as st
 import numpy as np
 import time
 
-st.image("ohio_logo_small.svg", width=350)
+st.image("ohio_logo_small.svg", width=310)
+# SVG needed to be optimized svg from Inkscape save as to work
 
 
 tab1, tab2, tab3 = st.tabs(["Power", "Sliders", "Owl"])
