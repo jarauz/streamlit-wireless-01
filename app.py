@@ -33,7 +33,7 @@ with tab1:
     n2 = st.number_input('Input power in [dBm]', key='n2')
     st.write('Power in [dBm] = ', n2)
     pmW = np.power(10,n2/10)
-    output = "{:.4f}".format(pmW)
+    output = "{:.4e}".format(pmW)
     st.write('Power in [mW] is = ', output, 'mW')
     st.latex(r'''P_{mW}=10^{\left( \frac{P_{dBm}}{10} \right )}''')      
 
