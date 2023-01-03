@@ -19,7 +19,7 @@ with tab1:
 
   with col1:
     st.subheader('mW to dBm')
-    n1 = st.number_input('Input power in [mW]', key='n1', format="{:.4f}")
+    n1 = st.number_input('Input power in [mW]', key='n1', format='%.4e')
     st.write('Power in [mW] = ', n1)
     # keys have to be different, but not necessarily match the
     # name of the returned variable e.g. n1 and n1
