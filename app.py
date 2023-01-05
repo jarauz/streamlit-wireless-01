@@ -42,8 +42,10 @@ with tab2:
   col1, col2 = st.columns(2)
   with col1:
     st.subheader('Free space path loss')
-    n3 = st.number_input('Input a', key='n3')
-    n4 = st.number_input('Input b', key='n4')
+    n3 = st.number_input('Frequency in [MHz]', key='n3')
+    n4 = st.number_input('Distance Tx to Rx in [Km]', key='n4')
+    st.latex(r'''PL_{dB}=20 \times log_{10}(d_{Km})+20 \times log_{10}(f_{MHz})+32.45''')      
+
 
   result1 = st.button(label="times2")
   result2 = st.button(label="times3")
