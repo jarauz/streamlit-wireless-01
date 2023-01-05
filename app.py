@@ -42,18 +42,24 @@ with tab2:
   col1, col2 = st.columns(2)
   with col1:
     st.subheader('Free space path loss')
-    n3 = st.number_input('Frequency in [MHz]', key='n3')
-    n4 = st.number_input('Distance Tx to Rx in [Km]', key='n4')
+    n3 = st.number_input('Distance Tx to Rx in [Km]', key='n3')
+    n4 = st.number_input('Frequency in [MHz]', key='n4')
     st.latex(r'''PL_{dB}=20 \times log_{10}(d_{Km})+20 \times log_{10}(f_{MHz})+32.45''')      
 
 
-  result1 = st.button(label="times2")
-  result2 = st.button(label="times3")
+  result1 = st.button(label="Compute path loss PL in [dB]")
+  result2 = st.button(label="Compute distance d in [Km]")
+  result3 = st.button(label="Compute frequency f in [MHz]")
+  
 
   with col2:
     st.subheader('Model results')
     if result1:
-        st.write('res1:', str(n3*2))
+        pl = (20*np.log10(n3))+(20*np.log10(n4))+32.45
+        output = "{:.4f}".format(pl)
+        st.write('Distance Tx to Rx in [Km] is ', n3, 'Km')
+        st.write('Frequency in [MHz] is ', n4, 'MHz')
+        st.write('Path loss in [dB] is ', output, 'dB')
     if result2:
         st.write('res2:', str(n3*3))
         
