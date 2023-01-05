@@ -44,6 +44,7 @@ with tab2:
     st.subheader('Free space path loss')
     n3 = st.number_input('Distance Tx to Rx in [Km]', key='n3')
     n4 = st.number_input('Frequency in [MHz]', key='n4')
+    n5 = st.number_input('Path loss in [dB]', key='n4')
     st.latex(r'''PL_{dB}=20 \times log_{10}(d_{Km})+20 \times log_{10}(f_{MHz})+32.45''')      
 
 
@@ -61,8 +62,17 @@ with tab2:
         st.write('Frequency in [MHz] is ', n4, 'MHz')
         st.write('Path loss in [dB] is ', output, 'dB')
     if result2:
-        st.write('res2:', str(n3*3))
-        
+        d = np.power(10,((n5 - 32.45 - (20*np.log10(n4)))/20))
+        output = "{:.4f}".format(d)
+        st.write('Frequency in [MHz] is ', n4, 'MHz')
+        st.write('Path loss in [dB] is ', n5, 'dB')
+        st.write('Distance Tx to Rx in [Km] is ', output, 'Km')
+    if result3:
+        f = np.power(10,((n5 - 32.45 - (20*np.log10(n3)))/20))
+        output = "{:.4f}".format(f)
+        st.write('Path loss in [dB] is ', n5, 'dB')
+        st.write('Distance Tx to Rx in [Km] is ', n3, 'Km')
+        st.write('Frequency in [MHz] is ', output, 'MHz')
 
   
 with tab3:
