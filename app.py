@@ -42,6 +42,8 @@ with tab2:
   col1, col2 = st.columns(2)
   with col1:
     st.subheader('Free space path loss')
+    st.caption('Type values of known parameters in the boxes')
+    st.caption('Use the buttons to compute the unknown parameter')
     n3 = st.number_input('Distance Tx to Rx in [Km]', key='n3')
     n4 = st.number_input('Frequency in [MHz]', key='n4')
     n5 = st.number_input('Path loss in [dB]', key='n4')
@@ -74,12 +76,19 @@ with tab2:
         st.write('Path loss in [dB] is ', n5, 'dB')
         st.write('Distance Tx to Rx in [Km] is ', n3, 'Km')
         st.write('Frequency in [MHz] is ', output, 'MHz')
-        st.latex(r'''f_{MHz} = 10^{\frac{PL_{dB} - 32.45 - 20 \times log_{10}(d_{Km})}{20}}''')  
+        st.latex(r'''Prx_{[dBm]}=Ptx_{[dBm]}-PL_{[dB]}+Gtx_{[dB]}+Grx_{[dB]}''')  
 
   
 with tab3:
-  st.header("An owl")
-  st.image("https://static.streamlit.io/examples/owl.jpg", width=290)
+  col1, col2 = st.columns(2)
+  with col1:
+    st.subheader('Free space propagation')
+    n6 = st.number_input('Power transmitted in [dBm]', key='n6')
+    n7 = st.number_input('Power transmitted in [dBm]', key='n6')
+    n8 = st.number_input('Path Loss in [dB]', key='n7')
+    n9 = st.number_input('Gain transmitting antenna [dB]', key='n8')
+    n10 = st.number_input('Gain receiving antenna [dB]', key='n9')
+    st.latex(r'''Prx_{[dBm]}=Ptx_{[dBm]}-PL_{[dB]}+Gtx_{[dB]}+Grx_{[dB]}''')   
 
 with tab4:
   st.header("An owl")
