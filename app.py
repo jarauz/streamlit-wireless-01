@@ -154,7 +154,7 @@ with tab4:
   col1, col2, col3 = st.columns(3, gap="large")
   with col1:
     st.caption('Enter signal and noise powers to compute SNR in numerical format and dB')
-    n11 = st.number_input('Signal power in [mW] (Ps)', key='n11', format='%.4f')
+    n11 = st.number_input('Signal power in [mW] (Ps)', key='n11', format='%.8f')
     n12 = st.number_input('Noise power in [mW] (Pn)', key='n12', format='%.4e')
     st.write('Signal power in [mW] = ', n11)
     st.write('Noise power in [mW] = ', n12)
