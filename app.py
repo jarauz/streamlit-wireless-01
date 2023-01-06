@@ -67,12 +67,14 @@ with tab2:
         st.write('Frequency in [MHz] is ', n4, 'MHz')
         st.write('Path loss in [dB] is ', n5, 'dB')
         st.write('Distance Tx to Rx in [Km] is ', output, 'Km')
+        st.latex(r'''d_{Km} = 10^{\frac{PL_{dB} - 32.45 - 20 \times log_{10}(f_{MHz})}{20}}''')      
     if result3:
         f = np.power(10,((n5 - 32.45 - (20*np.log10(n3)))/20))
         output = "{:.4f}".format(f)
         st.write('Path loss in [dB] is ', n5, 'dB')
         st.write('Distance Tx to Rx in [Km] is ', n3, 'Km')
         st.write('Frequency in [MHz] is ', output, 'MHz')
+        st.latex(r'''f_{MHz} = 10^{\frac{PL_{dB} - 32.45 - 20 \times log_{10}(d_{Km})}{20}}''')  
 
   
 with tab3:
