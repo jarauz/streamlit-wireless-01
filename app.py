@@ -131,7 +131,7 @@ with tab3:
 
     if result7:
       gtx = n6-n7+n8-n10
-      output = "{:.4f}".format(grx)
+      output = "{:.4f}".format(gtx)
       st.write('Power received in [dBm] is ', n6, '[dBm]')
       st.write('Power transmitted in [dBm] is ', n7, '[dBm]')
       st.write('Path loss in [dB] is ', n8, '[dB]')
