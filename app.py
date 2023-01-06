@@ -92,7 +92,7 @@ with tab3:
     st.latex(r'''Prx_{[dBm]}=Ptx_{[dBm]}-PL_{[dB]}+Gtx_{[dB]}+Grx_{[dB]}''')
 
     result4 = st.button(label="Compute Prx in [dBm]")
-    result5 = st.button(label="Compute Ptx in [dBm")
+    result5 = st.button(label="Compute Ptx in [dBm]")
     result6 = st.button(label="Compute PL in [dB]")
     result7 = st.button(label="Compute Gtx in [dB]")
     result8 = st.button(label="Compute Grx in [dB]")
@@ -150,7 +150,43 @@ with tab3:
       st.latex(r'''Grx_{[dB]}=Ptx_{[dBm]}-Prx_{[dBm]}+PL_{[dB]}-Gtx_{[dB]}''')
 
 with tab4:
-  st.subheader("Signal to noise computations")
+  st.subheader("Signal to noise ratio (SNR) computations")
+  col1, col2, col3 = st.columns(3, gap="large")
+  with col1:
+    st.caption('Enter signal and noise powers to compute SNR in numerical format and dB')
+    n11 = st.number_input('Signal power in [mW] (Ps)', key='n11', format='%.4e')
+    n12 = st.number_input('Noise power in [mW] (Pn)', key='n12', format='%.4e')
+    st.write('Signal power in [mW] = ', n11)
+    st.write('Noise power in [mW] = ', n12)
+    snr_nf = np.divide(n11,n12)
+    snr_db = 10 * np.log10(np.divide(n11,n12))
+    output1 = "{:.4f}".format(snr_nf)
+    output2 = "{:.4f}".format(snr_db)
+    if n12==0:
+      output1 = np.inf
+      output2 = np.inf
+    st.write('SNR (numerical) is ', output1)
+    st.write('SNR in [dB] is', output2, 'dB')
+    st.latex(r'''\text{SNR}=\frac{P_s}{P_n}''')
+    st.latex(r'''\text{SNR}_{dB}=10 \times log_{10} \left( \frac{P_s}{P_n} \right )''')
+
+  with col2:
+    st.caption('Enter SNR in numerical format or in dB. Compute SNR in both formats')
+    n13 = st.number_input('SNR numerical format (SNR)', key='n13', format='%.4e')
+    n14 = st.number_input('SNR in [dB] (SNR)', key='n14', format='%.4e')
+    result9 = st.button(label="Compute SNR in dB")
+    result10 = st.button(label="Compute numerical SNR")
+
+    if result9:
+      snr_db = 10 * np.log10(n13)
+      output1 = "{:.4f}".format(snr_db)
+      st.write('For SNR ', n13, '(numerical format) ', ', SNR in [dB] is', output1, 'dB')
+      st.latex(r'''\text{SNR}_{dB}=10 \times log_{10} (\text{SNR})''')
+    if result10:
+      snr_nf = np.power(10,n14/10)
+      output2 = "{:.4f}".format(snr_nf)
+      st.write('For SNR ', n14, '[dB] ', ', SNR (numerical) is ', output2)
+      st.latex(r'''\text{SNR}=10^{\left ( \frac{\text{SNR}_{dB}}{10} \right )} ''')
 
 with tab5:
   st.subheader("Shannon-Hartley channel bandwidth")
