@@ -7,7 +7,7 @@ st.set_page_config(
     page_icon="ect.ico",
     layout="wide",
     menu_items={
-        'About': "App contentsL Copyright Julio Aráuz, 2023"
+        'About': "App contents: Copyright Julio Aráuz, 2023"
     }
 )
 
