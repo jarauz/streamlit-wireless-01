@@ -76,7 +76,7 @@ with tab2:
         st.write('Path loss in [dB] is ', n5, 'dB')
         st.write('Distance Tx to Rx in [Km] is ', n3, 'Km')
         st.write('Frequency in [MHz] is ', output, 'MHz')
-        st.latex(r'''Prx_{[dBm]}=Ptx_{[dBm]}-PL_{[dB]}+Gtx_{[dB]}+Grx_{[dB]}''')  
+        st.latex(r'''f_{MHz} = 10^{\frac{PL_{dB} - 32.45 - 20 \times log_{10}(d_{Km})}{20}}''')    
 
   
 with tab3:
