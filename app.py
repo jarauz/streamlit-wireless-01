@@ -42,8 +42,7 @@ with tab2:
   col1, col2 = st.columns(2)
   with col1:
     st.subheader('Free space path loss')
-    st.caption('Type values of known parameters in the boxes')
-    st.caption('Use the buttons to compute the unknown parameter')
+    st.caption('Type values of known parameters in the boxes. Then, use the buttons to compute the unknown parameter')
     n3 = st.number_input('Distance Tx to Rx in [Km]', key='n3')
     n4 = st.number_input('Frequency in [MHz]', key='n4')
     n5 = st.number_input('Path loss in [dB]', key='n4')
@@ -84,10 +83,10 @@ with tab3:
   with col1:
     st.subheader('Free space propagation')
     n6 = st.number_input('Power transmitted in [dBm]', key='n6')
-    n7 = st.number_input('Power transmitted in [dBm]', key='n6')
-    n8 = st.number_input('Path Loss in [dB]', key='n7')
-    n9 = st.number_input('Gain transmitting antenna [dB]', key='n8')
-    n10 = st.number_input('Gain receiving antenna [dB]', key='n9')
+    n7 = st.number_input('Power transmitted in [dBm]', key='n7')
+    n8 = st.number_input('Path Loss in [dB]', key='n8')
+    n9 = st.number_input('Gain transmitting antenna [dB]', key='n9')
+    n10 = st.number_input('Gain receiving antenna [dB]', key='n10')
     st.latex(r'''Prx_{[dBm]}=Ptx_{[dBm]}-PL_{[dB]}+Gtx_{[dB]}+Grx_{[dB]}''')   
 
 with tab4:
