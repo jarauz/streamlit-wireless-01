@@ -42,7 +42,7 @@ with tab2:
   col1, col2 = st.columns(2)
   with col1:
     st.subheader('Free space path loss')
-    st.caption('Type values of known parameters in the boxes. Then, use the buttons to compute the unknown parameter')
+    st.caption('Type values of known parameters in the boxes.')
     n3 = st.number_input('Distance Tx to Rx in [Km]', key='n3')
     n4 = st.number_input('Frequency in [MHz]', key='n4')
     n5 = st.number_input('Path loss in [dB]', key='n4')
@@ -56,6 +56,7 @@ with tab2:
 
   with col2:
     st.subheader('Model results')
+    st.caption('Use the buttons to compute the unknown parameter and display the results.')
     if result1:
         pl = (20*np.log10(n3))+(20*np.log10(n4))+32.45
         output = "{:.4f}".format(pl)
