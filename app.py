@@ -3,14 +3,11 @@ import numpy as np
 import time
 
 st.set_page_config(
-    page_title="Ex-stream-ly Cool App",
-    page_icon="🧊",
+    page_title="Digital Comm Calculator",
+    page_icon="ect.ico",
     layout="wide",
-    initial_sidebar_state="expanded",
     menu_items={
-        'Get Help': 'https://www.extremelycoolapp.com/help',
-        'Report a bug': "https://www.extremelycoolapp.com/bug",
-        'About': "# This is a header. This is an *extremely* cool app!"
+        'About': "App contentsL Copyright Julio Aráuz, 2023"
     }
 )
 
