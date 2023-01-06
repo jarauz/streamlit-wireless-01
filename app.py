@@ -160,7 +160,7 @@ with tab3:
 
 with tab4:
   st.subheader("Signal to noise ratio (SNR) computations")
-  col1, col2, col3, col4 = st.columns(4, gap="large")
+  col1, col2, col3 = st.columns(3, gap="large")
   with col1:
     st.caption('Enter signal and noise powers in mW to compute SNR in numerical format and dB.')
     n11 = st.number_input('Signal power in [mW] (Ps)', key='n11', format='%.10f')
@@ -194,10 +194,6 @@ with tab4:
     st.latex(r'''\text{SNR}_{dB}=P_s [\text{dBm}] - P_n [\text{dBm}]''')
 
   with col3:
-    # Empty column
-    pass
-
-  with col4:
     st.caption('Enter SNR in numerical format or in dB. Compute SNR in both formats.')
     n15 = st.number_input('SNR numerical format (SNR)', key='n15', format='%.4f')
     n16 = st.number_input('SNR in [dB] (SNR)', key='n16', format='%.4f')
