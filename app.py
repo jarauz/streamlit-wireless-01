@@ -212,5 +212,42 @@ with tab4:
       st.latex(r'''\text{SNR}=10^{\left ( \frac{\text{SNR}_{dB}}{10} \right )} ''')
 
 with tab5:
-  st.subheader("Shannon-Hartley channel bandwidth")
+  col1, col2 = st.columns(2)
+  with col1:
+    st.subheader('Shannon-Hartley Theorem')
+    st.caption('Type values of known parameters in the boxes.')
+    n17 = st.number_input('Bandwidth in [Hz] (B)', key='n17')
+    n18 = st.number_input('Numerical SNR (SNR)', key='n18')
+    n19 = st.number_input('Channel capacity in [bps] (C)', key='n19')
+    st.latex(r'''C_{bps}=B_{Hz} \times log_{2}(1+\text{SNR})''')      
+
+
+    result11 = st.button(label="Compute capacity C in [bps]")
+    result12 = st.button(label="Compute bandwidth in [Hz]")
+    result13 = st.button(label="Compute SNR numerical")
+    
+
+  with col2:
+    st.subheader('Model results')
+    st.caption('Use the buttons to compute the unknown parameter and display the results.')
+    if result11:
+        c = n17*np.log2(1+n18)
+        output = "{:.4f}".format(c)
+        st.write('Bandwidth in [Hz] is ', n17, 'Hz')
+        st.write('Numerical SNR is ', n18)
+        st.write('Channel capacity in [bps] is ', output, 'bps')
+    if result12:
+        b = n19/np.log2(1+n18)
+        output = "{:.4f}".format(b)
+        st.write('Numerical SNR is ', n18)
+        st.write('Channel capacity in [bps] is ', n19, 'bps')
+        st.write('Bandwidth in [Hz] is ', output, 'Hz')
+        st.latex(r'''B_{Hz}=\frac{C_{bps}}{log_{2}(1+\text{SNR})}''')      
+    if result13:
+        s = np.power(2,np.divide(n19,n17))-1
+        output = "{:.4f}".format(s)
+        st.write('Channel capacity in [bps] is ', n19, 'bps')
+        st.write('Bandwidth in [Hz] is ', n17, 'Hz')
+        st.write('Numerical SNR is ', output, 'SNR in [dB] is', 10*np.log10(s), 'dB')
+        st.latex(r'''\text{SNR}=2^{\frac{C_{bps}}{B_{Hz}}}''')    
 
