@@ -21,7 +21,7 @@ st.image("ohio_logo_small.svg", width=200)
 st.caption("McClure School of Emerging Communicaton Technologies")
 
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Power", "Path loss", "Free space propagation", "SNR", "Shannon"])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Power", "Path loss", "Free space propagation", "SNR", "Shannon", 'Units '])
 
 with tab1:
   col1, col2 = st.columns(2)
@@ -251,3 +251,13 @@ with tab5:
         st.write('Numerical SNR is ', output, 'SNR in [dB] is', 10*np.log10(s), 'dB')
         st.latex(r'''\text{SNR}=2^{\frac{C_{bps}}{B_{Hz}}}''')    
 
+with tab6:
+  st.subheader('Power')
+  st.caption('Type values')
+  col11, col12, col13 = st.columns(3)
+  st.subheader('Data Rate')
+  st.caption('Type values')
+  col21, col22, col23 = st.columns(3)
+  st.subheader('Frequency')
+  st.caption('Type values')
+  col21, col22, col23 = st.columns(3)
