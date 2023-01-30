@@ -21,7 +21,7 @@ st.image("ohio_logo_small.svg", width=200)
 st.caption("McClure School of Emerging Communicaton Technologies")
 
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Power", "Path loss", "Free space propagation", "SNR", "Shannon", 'Unit'])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Power", "Path loss", "Free space propagation", "SNR", "Shannon", 'Units'])
 
 with tab1:
   col1, col2 = st.columns(2)
