@@ -18,7 +18,9 @@ def computeOne(a):
 
 st.image("ohio_logo_small.svg", width=200)
 # SVG needed to be optimized svg from Inkscape save as to work
+st.caption("Information and Telecommunication Systems")
 st.caption("McClure School of Emerging Communicaton Technologies")
+
 
 
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Power", "Path loss", "Free space propagation", "SNR", "Shannon", 'Units'])
