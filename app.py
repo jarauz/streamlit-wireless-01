@@ -55,7 +55,7 @@ with tab2:
     st.caption('Type values of known parameters in the boxes.')
     n3 = st.number_input('Distance Tx to Rx in [Km]', key='n3')
     n4 = st.number_input('Frequency in [MHz]', key='n4')
-    n5 = st.number_input('Path loss in [dB]', key='n4')
+    n5 = st.number_input('Path loss in [dB]', key='n5')
     st.latex(r'''PL_{dB}=20 \times log_{10}(d_{Km})+20 \times log_{10}(f_{MHz})+32.45''')      
 
 
@@ -249,7 +249,7 @@ with tab5:
         output = "{:.4f}".format(s)
         st.write('Channel capacity in [bps] is ', n19, 'bps')
         st.write('Bandwidth in [Hz] is ', n17, 'Hz')
-        st.write('Numerical SNR is ', output, 'SNR in [dB] is', 10*np.log10(s), 'dB')
+        st.write('Numerical SNR is ', output, '. SNR in [dB] is', 10*np.log10(s), 'dB')
         st.latex(r'''\text{SNR}=2^{\frac{C_{bps}}{B_{Hz}}}''')    
 
 with tab6:
