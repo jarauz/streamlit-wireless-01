@@ -225,7 +225,7 @@ with tab5:
 
     result11 = st.button(label="Compute capacity C in [bps]")
     result12 = st.button(label="Compute bandwidth in [Hz]")
-    result13 = st.button(label="Compute SNR numerical")
+    result13 = st.button(label="Compute SNR numerical and SNR in dB")
     
 
   with col2:
@@ -249,7 +249,8 @@ with tab5:
         output = "{:.4f}".format(s)
         st.write('Channel capacity in [bps] is ', n19, 'bps')
         st.write('Bandwidth in [Hz] is ', n17, 'Hz')
-        st.write('Numerical SNR is ', output, '. SNR in [dB] is', 10*np.log10(s), 'dB')
+        st.write('Numerical SNR is ', output)
+        st.write('SNR in [dB] is', 10*np.log10(s), 'dB')
         st.latex(r'''\text{SNR}=2^{\frac{C_{bps}}{B_{Hz}}}''')    
 
 with tab6:
