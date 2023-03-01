@@ -19,7 +19,7 @@ def computeOne(a):
 
 st.image("ohio_logo_small.svg", width=200)
 # SVG needed to be optimized svg from Inkscape save as to work
-st.caption("McClure School - Information and Telecommunication Systems Program")
+st.caption("McClure School - [Information and Telecommunication Systems Program](https://www.ohio.edu/mcclure)")
 
 
 
