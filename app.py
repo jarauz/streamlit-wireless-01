@@ -2,8 +2,9 @@ import streamlit as st
 import numpy as np
 import time
 
+
 st.set_page_config(
-    page_title="Digital Comm Calculator",
+    page_title="Wireless Digital Communications Calculator",
     page_icon="ect.ico",
     layout="wide",
     menu_items={
